@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-
+import Link from "next/link"
 
 function Products({ data }) {
     return (
@@ -9,7 +9,7 @@ function Products({ data }) {
         {
           data?.products?.map((v, i) => {
             return (
-              <p key={i}>{v.title}</p>
+                <p key={i}><Link href={`/dashboard/client/${v.id}`}>{v.title}</Link></p>
             )
           })
         }
