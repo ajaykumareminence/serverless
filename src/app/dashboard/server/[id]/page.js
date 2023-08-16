@@ -8,8 +8,8 @@ export default async function Page({ params }) {
                 data 
                 ?
                 <>
-                <p>{data.title}</p>
-                <Image height={250} width={250} alt={data.title} src={data.thumbnail}/>
+                <p>{data?.title}</p>
+                <Image height={250} width={250} alt={data?.title} src={data?.thumbnail}/>
                 </>
                 :
                 'product not found'
