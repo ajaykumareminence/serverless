@@ -8,7 +8,6 @@ import { CREATE_TRIP } from "@/store/slice/tripSlice";
 import { toast } from "react-hot-toast";
 import { handleKeyDown } from "@/utils/numberInput";
 export default function Trip({id}) {
-    console.log({ tripId: id })
     const dispatch = useDispatch()
     const { current_user } = useSelector((state) => state.user);
     function showDialog() {

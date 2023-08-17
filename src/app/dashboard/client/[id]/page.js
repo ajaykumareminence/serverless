@@ -3,6 +3,8 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 export default function Page({ params }) {
     const [loading, setLoading] = useState(false)
+
+    const [loading1, setLoading1] = useState(false)
     const [data, setData] = useState({})
     async function get() {
         setLoading(true)
@@ -10,11 +12,12 @@ export default function Page({ params }) {
         setData(response)
         setLoading(false)
     }
-    useEffect(() => {
+     useEffect(() => {
         get()
     }, [])
     return (
         <>
+        <p onClick={()=>{setLoading1(x=>!x)}}>click</p>
             {
                 loading
                     ?
@@ -24,7 +27,7 @@ export default function Page({ params }) {
                         ?
                         <>
                             <p>{data?.title}</p>
-                            <Image alt={`aitt${data?.id}`} height={250} width={250}  src={data?.thumbnail} priority={true} />
+                            <Image alt={`aitt${data?.id}`} height={250} width={250}  src={data?.thumbnail}  />
                         </>
                         :
                         'product not found'
